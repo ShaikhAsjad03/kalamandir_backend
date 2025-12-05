@@ -6,6 +6,7 @@ const app = express();
 require("./config/connection");
 const cors = require("cors");
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/upload", express.static(path.join(__dirname, "upload")));
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(cors());
